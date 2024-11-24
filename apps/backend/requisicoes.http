@@ -1,0 +1,62 @@
+GET http://localhost:4000/eventos
+
+
+### Buscar um evento pelo ou pelo alias
+GET http://localhost:4000/eventos/aniversario-joao
+
+
+### Validar alias
+GET http://localhost:4000/eventos/validar/evento-fullstack 2025/2a560f58-a25d-42c6-a3f1-b1c87d81ef01
+
+
+
+
+### acessar evento
+POST http://localhost:4000/eventos/acessar
+Content-Type: application/json
+
+{
+    "id": "ac17e937-06c5-43ab-8d0f-311c36936850",      
+    "senha": "joao2024@"
+}
+
+
+### cadastrar convidado
+POST http://localhost:4000/eventos/casamento-alberto-marina/convidado
+Content-Type: application/json
+
+{
+    "id": "2806d43e-822a-4d6e-857f-d51499a8e374",
+    "nome": "juliana vidal",
+    "email": "juliana@gmail.com",
+    "confirmado": true,
+    "possuiAcompanhantes": true,
+    "qntdAcompanhantes": 2
+}
+
+###
+POST http://localhost:4000/eventos
+Content-Type: application/json
+
+{
+    "alias": "evento-fullstack 2025",
+    "nome": "Evento Semana Formação.DEV",
+    "data": "2025-12-31T23:00",
+    "local": "São Paulo",
+    "descricao": "Evento de tecnologia",
+    "senha": "frameworks2025",
+    "imagem": "https://www.formacao.dev/assets/img/formacao-dev.png",
+    "imagemBackground": "https://www.formacao.dev/assets/img/formacao-dev-background.png",
+    "publicoEsperado": 1000,
+    "convidados": [
+        {
+            "nome": "Leonardo Leitão",
+            "email": "leonardo@formacao.dev",
+            "confirmado": true,
+            "possuiAcompanhantes": true,
+            "qntdAcompanhantes": 10
+        }
+    ]
+}
+
+
